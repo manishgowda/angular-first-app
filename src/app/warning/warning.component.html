@@ -1,0 +1,7 @@
+<button (click)="toggleDisplay($event)" class="btn btn-primary"> Display details </button>
+<p *ngIf="toggleButton"> i am displaying the details</p>
+<div *ngFor="let log of buttonLog"
+[ngStyle]="{backgroundColor: getColor(log)}"
+[ngClass]="{'white-text': log>5 }">
+  {{log}}
+</div>

@@ -1,0 +1,5 @@
+<!-- <input type="text" (keypress)="testClick($event)">  -->
+<input type="text" [(ngModel)]="testInput" (input)="testClick($event)">
+<p>{{testInput}}</p>
+<button [disabled]="testInput === ''" (click)="onClick()">Test button</button>
+<p>You are get output from {{getAppName()}} and app id is {{getAppId()}}</p>
