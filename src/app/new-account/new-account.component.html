@@ -1,0 +1,10 @@
+<div class="container">
+  <div class="row">
+    <label>Account Name</label>
+    <input type="text" class="form-control" #accountName>
+    <label>Account status</label>
+    <!-- i.e #accountName are for ViewChild decorator used in the type script -->
+    <input type="text" class="form-control" #accountStatus>
+    <button class="btn btn-primary" (click)="onCreateAccount()">Create Account</button>
+  </div>
+</div>

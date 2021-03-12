@@ -5,6 +5,12 @@
   [element]="serverElement"></app-server-element>
 </div>
 <div class="container">
+  <app-new-account ></app-new-account>
+  <!-- Indexing feature is used in below script for the ngFor loop -->
+  <app-update-account *ngFor="let account of accounts; let i = index"
+  [accountInserted]="account" [id]="i"></app-update-account>
+</div>
+<div class="container">
   <app-gamecomponent (gameStart)="gameStarted($event)"></app-gamecomponent>
   <!-- <div (gameStart)="gameStarted($event)"></div> -->
   <div class="row">

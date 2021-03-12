@@ -12,6 +12,8 @@ import { OddComponent } from './odd/odd.component';
 import { EvenComponent } from './even/even.component';
 import { AppBasicHighlightDirective } from './basic-highlight/basic-highlight.directive';
 import { BetterHighlightDirective } from './better-highlight.directive';
+import { NewAccountComponent } from './new-account/new-account.component';
+import { UpdateAccountComponent } from './update-account/update-account.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +26,9 @@ import { BetterHighlightDirective } from './better-highlight.directive';
     OddComponent,
     EvenComponent,
     AppBasicHighlightDirective,
-    BetterHighlightDirective
+    BetterHighlightDirective,
+    NewAccountComponent,
+    UpdateAccountComponent
   ],
   imports: [
     BrowserModule,
