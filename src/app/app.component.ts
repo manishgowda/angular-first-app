@@ -1,3 +1,4 @@
+import { UserActivityServices } from './activity.services';
 import { Component, OnInit } from '@angular/core';
 import { AccountServices } from './accounts.services';
 
@@ -5,7 +6,7 @@ import { AccountServices } from './accounts.services';
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
-  providers: [AccountServices]
+  providers: [AccountServices, UserActivityServices]
 })
 export class AppComponent implements OnInit{
 
@@ -15,6 +16,7 @@ export class AppComponent implements OnInit{
   odds = [];
   accounts: {name: string, status: string}[] = [];
 
+  link = 'server';
   constructor(private accountServices: AccountServices){
   }
 
@@ -27,6 +29,10 @@ export class AppComponent implements OnInit{
         name: serverData.serverName,
         content: serverData.serverContent
       });
+  }
+  switchLink(link: string): void{
+    console.log('event is ' + link);
+    this.link = link;
   }
 
   onBlueprintAdded(blueprintData: {serverName: string, serverContent: string}): void{

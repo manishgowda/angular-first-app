@@ -1,0 +1,22 @@
+<div class="row">
+  <div class="active">
+    <h1>Active Users</h1>
+    <div *ngFor="let myActivity of activteUser; let i=index">
+      <ul class="list-group-item">
+        <li class="list-item" *ngIf="myActivity.active">
+          <a href="#"  (click)="onItemClick(i, 'active')">{{myActivity.name}}</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="inactive" >
+    <h1>InActive Users</h1>
+    <div *ngFor="let myActivity of inactiveUser; let i=index">
+      <ul class="list-group-item">
+        <li class="list-item"  *ngIf="!myActivity.active">
+          <a href="#"(click)="onItemClick(i, 'inactive')">{{myActivity.name}}</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>

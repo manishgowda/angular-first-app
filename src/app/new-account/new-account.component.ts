@@ -9,9 +9,12 @@ import { Component, EventEmitter, OnInit, Output, ViewChild, ElementRef } from '
 export class NewAccountComponent implements OnInit {
   // Use th following code for the normal event emitter
   // @Output() createAccountEvent = new EventEmitter<{name: string, status: string}>();
-  constructor(private accountServices: AccountServices) { }
   @ViewChild('accountName', {static: true}) accountName: ElementRef;
   @ViewChild('accountStatus', {static: true}) accountStatus: ElementRef;
+  constructor(private accountServices: AccountServices) {
+    this.accountServices.statusUpdated.subscribe((status: string) =>
+    console.log('Staus is updated to' + status));
+  }
   ngOnInit(): void {
   }
   onCreateAccount(): void{

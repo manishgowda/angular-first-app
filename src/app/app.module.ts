@@ -14,6 +14,8 @@ import { AppBasicHighlightDirective } from './basic-highlight/basic-highlight.di
 import { BetterHighlightDirective } from './better-highlight.directive';
 import { NewAccountComponent } from './new-account/new-account.component';
 import { UpdateAccountComponent } from './update-account/update-account.component';
+import { HeaderComponent } from './header/header.component';
+import { UserActivityComponent } from './user-activity/user-activity.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +30,9 @@ import { UpdateAccountComponent } from './update-account/update-account.componen
     AppBasicHighlightDirective,
     BetterHighlightDirective,
     NewAccountComponent,
-    UpdateAccountComponent
+    UpdateAccountComponent,
+    HeaderComponent,
+    UserActivityComponent
   ],
   imports: [
     BrowserModule,

@@ -1,16 +1,17 @@
-<div class="container">
+<app-header (linkSwitch)="switchLink($event)"></app-header>
+<div class="container" *ngIf="link==='server'">
   <app-cockpit (serverCreated)= "onServerAdded($event)"
   (blueprintCreated)= "onBlueprintAdded($event)"></app-cockpit>
   <app-server-element *ngFor="let serverElement of serverElements"
   [element]="serverElement"></app-server-element>
 </div>
-<div class="container">
+<div class="container" *ngIf="link==='account'">
   <app-new-account ></app-new-account>
   <!-- Indexing feature is used in below script for the ngFor loop -->
   <app-update-account *ngFor="let account of accounts; let i = index"
   [accountInserted]="account" [id]="i"></app-update-account>
 </div>
-<div class="container">
+<div class="container" *ngIf="link==='game'">
   <app-gamecomponent (gameStart)="gameStarted($event)"></app-gamecomponent>
   <!-- <div (gameStart)="gameStarted($event)"></div> -->
   <div class="row">
@@ -25,4 +26,7 @@
       </ul>
     </div>
   </div>
+</div>
+<div class="container" *ngIf="link==='activity'">
+  <app-user-activity></app-user-activity>
 </div>

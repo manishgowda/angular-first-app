@@ -15,6 +15,7 @@ export class UpdateAccountComponent implements OnInit {
   }
   onSetTo(eventType: string): void{
     this.accountServices.accounts[this.id].status = eventType;
+    this.accountServices.statusUpdated.emit(eventType);
   }
 
 }
